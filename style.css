@@ -74,18 +74,14 @@ strong {
   background: #000;
 }
 
-.header > * {
-  grid-column: 2;
-}
-
 .header-content {
   display: flex;
+  grid-column: 2 / -2;
 }
 
 .logo-link {
   background: #ffe600;
   padding-top: 2em;
-  grid-column: 2;
 }
 
 .nav {
@@ -147,8 +143,27 @@ strong {
   margin-left: auto;
 }
 
-/* footer */
+@media (min-width: 600px) {
+  .open-nav,
+  .close-nav {
+    display: none;
+  }
+  .nav {
+    position: initial;
+  }
+  .nav-list {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .nav-item {
+    margin-left: 2em;
+  }
+  .nav-link {
+    font-size: 1rem;
+  }
+}
 
+/* footer */
 .footer {
   background: #ebebeb;
   padding: 4em 0;
