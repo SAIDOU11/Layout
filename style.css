@@ -9,6 +9,10 @@ body {
   color: #404040;
 }
 
+img {
+  max-width: 100%;
+}
+
 /* ==========
    typography
 ========== */
@@ -32,6 +36,26 @@ strong {
 .section-title {
   font-size: 1.125rem;
   color: #000;
+}
+
+.section-title:first-child {
+  margin-top: 0;
+}
+
+.page-title,
+.page-title-subtitle {
+  color: #000;
+  text-align: center;
+  grid-column: 2 / -2;
+}
+.page-title {
+  font-size: 3rem;
+  margin-bottom: 0;
+}
+.subtitle,
+.page-title-subtitle {
+  font-size: 1.125rem;
+  margin: 0.5em 0 3em;
 }
 
 /* buttons */
@@ -178,6 +202,7 @@ strong {
   background: #ebebeb;
   padding: 4em 0;
   text-align: center;
+  /*  */
   grid-template-areas:
     '. social .'
     '. main .';
@@ -283,5 +308,28 @@ strong {
   }
   .col:first-child {
     grid-column: 2 / span 1;
+  }
+}
+
+/* ==========
+   template page
+========== */
+.main-template {
+  padding: 4em 0;
+}
+.main-template > * {
+  grid-column: 2 / -2;
+}
+
+.main-image {
+  margin-bottom: 1.5em;
+}
+
+@media (min-width: 600px) {
+  .main-image {
+    grid-column: 2;
+  }
+  .main-text {
+    grid-column: 3 / span 2;
   }
 }
