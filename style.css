@@ -4,7 +4,7 @@
 
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   line-height: 1.5;
   color: #404040;
 }
@@ -38,8 +38,21 @@ strong {
   color: #000;
 }
 
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #ffe600;
+  margin: 10px 0 0;
+}
+
 .section-title:first-child {
   margin-top: 0;
+}
+
+.section-title-center::after {
+  margin: 10px auto 0;
 }
 
 .page-title,
@@ -48,10 +61,23 @@ strong {
   text-align: center;
   grid-column: 2 / -2;
 }
+
 .page-title {
   font-size: 3rem;
-  margin-bottom: 0;
+  margin-bottom: 0.5em;
+  justify-self: center;
 }
+
+.page-title::after {
+  content: "";
+  display: block;
+  height: 30px;
+  width: 105%;
+  background: #ffe600;
+  margin-top: -40px;
+  margin-left: 8px;
+}
+
 .subtitle,
 .page-title-subtitle {
   font-size: 1.125rem;
@@ -204,8 +230,8 @@ strong {
   text-align: center;
   /*  */
   grid-template-areas:
-    '. social .'
-    '. main .';
+    ". social ."
+    ". main .";
 }
 
 .footer-content,
@@ -249,7 +275,7 @@ strong {
 
 @media (min-width: 600px) {
   .footer {
-    grid-template-areas: '. main main social .';
+    grid-template-areas: ". main main social .";
   }
   .footer-content {
     text-align-last: left;
@@ -263,7 +289,7 @@ strong {
    hero area
 ========== */
 .hero {
-  background-image: url('./images/hero-bg.jpg');
+  background-image: url("./images/hero-bg.jpg");
   background-size: cover;
   background-position: bottom;
   padding: 8em 0 4em;
@@ -323,6 +349,7 @@ strong {
 
 .main-image {
   margin-bottom: 1.5em;
+  box-shadow: 5px 5px 0 black, 10px 10px 0 #ffe600;
 }
 
 @media (min-width: 600px) {
